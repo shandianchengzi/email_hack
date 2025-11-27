@@ -117,7 +117,7 @@ class FakeEmail:
                         self.Send(u"from: %s" % self.from_addr) and\
                         self.Send("subject: "+subject) and\
                         self.Send(u"") and\
-                        self.Send(body+"\r\n\r\nYour random id is "+"".join(random.choice(string.hexdigits) for i in range(32))+"\r\n."):
+                        self.Send(body+'\r\n\r\n'+"".join(random.choice(string.hexdigits) for i in range(32))+"\r\n."):
 
                     result = self.Recv(threshold=0, check=u"250")
                     if result[0]:
